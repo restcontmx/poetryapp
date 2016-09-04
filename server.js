@@ -30,7 +30,7 @@ var passport = require('passport'), FacebookStrategy = require('passport-faceboo
 /// My resources, not all the shit you see
 var fragments = require( './routes/fragments.js' );
 var users = require( './routes/users.js' );
-
+var books = require( './routes/books.js' );
 //mongoose.connect( 'mongodb://instapoesia_admin:%Ralogu2@ds015690.mlab.com:15690/heroku_0vz3fpjs' );
 mongoose.connect( 'mongodb://localhost:27017/instapoesia_deb_db_2' )
 router.use(express.static(path.resolve(__dirname, 'client')));
@@ -40,6 +40,7 @@ router.use(passport.session());
 
 // The fragments routes
 router.use( '/api/write', fragments );
+router.use( '/api/book', books );
 router.use( '/api/auth', users );
 
 var messages = [];
