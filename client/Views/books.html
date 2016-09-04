@@ -1,0 +1,35 @@
+<div class="books_container" ng-controller="book_controller">
+
+	<div class="container">
+		
+		<div class="row">
+			
+			<div class="col-md-5 text-right">
+				<h2>Libros <button class="btn btn-default">Nuevo [450]</button></h2>
+
+			</div>
+
+			<div class="col-md-7">
+				<br />
+				<div class="books-box">
+					<div ng-repeat="b in books">
+					  	<div class="row">
+					  		<div class="col-md-8 text-left">
+					  			<div class="books-box-title"><a href="">{{b.title}}</a></div> 
+					  		</div>
+					  		<div class="col-md-4 text-right">
+					  			<span class="badge">{{b.fragments}}</span> escritos 
+					  			<span class="badge">{{b.shares}}</span> compartidos
+					  		</div>
+					  	</div>
+					  	<hr/>
+					  	<br/>
+					</div>
+				</div>
+
+			</div>
+
+		</div>
+	</div>
+
+</div>

@@ -1,0 +1,131 @@
+<!doctype html>
+<html lang="en" ng-app="instapoesia_main_app">
+    
+    <head>
+
+        <meta charset="utf-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <!-- The above 3 meta tags *must* come first in the head; any other head content must come *after* these tags -->
+        <meta name="description" content="">
+        <meta name="author" content="">
+        <link rel="icon" href="http://i.imgur.com/wgcact9.png">
+        <title>insta poesía</title>
+
+        <!-- Bootstrap core CSS -->
+        <link href="https://getbootstrap.com/dist/css/bootstrap.min.css" rel="stylesheet">
+
+        <!-- Custom styles for this template -->
+        <link href="/css/navbar-static-top.css" rel="stylesheet">
+
+        <!-- Just for debugging purposes. Don't actually copy these 2 lines! -->
+        <!--[if lt IE 9]><script src="../../assets/js/ie8-responsive-file-warning.js"></script><![endif]-->
+        <script src="https://getbootstrap.com/assets/js/ie-emulation-modes-warning.js"></script>
+
+        <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.5.0/css/font-awesome.min.css">
+
+        <link href="/css/bootstrap-social.css" rel="stylesheet">
+        <link href='https://fonts.googleapis.com/css?family=Raleway:300' rel='stylesheet' type='text/css'>
+        <link href='https://fonts.googleapis.com/css?family=Amiri' rel='stylesheet' type='text/css'>
+        <link href="https://fonts.googleapis.com/css?family=Trirong" rel="stylesheet">
+        <link href='https://fonts.googleapis.com/css?family=Roboto+Mono' rel='stylesheet' type='text/css'>
+        <link href='https://fonts.googleapis.com/css?family=Share+Tech+Mono' rel='stylesheet' type='text/css'>
+        <link href='https://fonts.googleapis.com/css?family=Cormorant+Infant:400,500' rel='stylesheet' type='text/css'>
+    </head>
+  
+    <body>
+        
+        <!-- Static navbar -->
+        <nav class="navbar navbar-default navbar-static-top">
+            <div class="container" ng-controller="navbarController">
+	            <div class="navbar-header">
+	            	<button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar" aria-expanded="false" aria-controls="navbar">
+	            		<span class="sr-only">Toggle navigation</span>
+	            		<span class="icon-bar"></span>
+	            		<span class="icon-bar"></span>
+	            		<span class="icon-bar"></span>
+	            	</button>
+	            	<a class="navbar-brand" href="#/">
+                        <a href="#/" class="pull-left"><img width="222" height="auto" data-sticky-width="150" data-sticky-height="auto" data-sticky-top="33" class="log_site_prin" src="http://i.imgur.com/d1mWySm.png"></a>
+                    </a>
+            	</div>
+	            <div id="navbar" class="navbar-collapse collapse">
+	            	<ul class="nav navbar-nav">
+	            		<li class="active">
+	            			<a href="#/">Top</a>
+	            		</li>
+	            		<li>
+	            			<a href="#/recent/">Recent</a>
+	            		</li>
+			            <li>
+			            	<a href="#/authors/">Autores</a>
+			            </li>
+			            <li>
+			            	<a href="#/contact/">Contacto</a>
+			            </li>
+			            <li>
+			            	<a href="#/acerca/">Acerca</a>
+			            </li>
+	            	</ul>
+	            	<ul class="nav navbar-nav navbar-right" ng-show="loginPanel.show">
+                        <li>
+                            <button class="btn btn-md btn-primary" ng-click="FBLogin()">Entra con Facebook</button>
+                        </li>
+	            	</ul>
+                    <ul class="nav navbar-nav navbar-right" ng-show="userPanel.show">
+                        
+                        <li>
+                            <a ng-click="show_write_modal()" href="">
+                                <i class="fa fa-pencil-square-o" aria-hidden="true"></i>
+                            </a>
+                        </li> 
+                        <li>
+                            <a href="#/libros/">
+                                <i class="fa fa-book" aria-hidden="true"></i>
+                            </a>
+                        </li>
+                        <li>
+                            <a href="#/autores/">
+                                <i class="fa fa-at" aria-hidden="true"></i>
+                            </a>
+                        </li>
+                        <li>
+                            <a href="#/cuenta/">
+                                <i class="fa fa-cog" aria-hidden="true"></i>
+                            </a>
+                        </li>
+                        <li>
+                            <a ng-click="FBLogout()" href="">
+                                <span class="label label-danger">
+                                    <i class="fa fa-power-off" aria-hidden="true"></i>
+                                </span>
+                            </a>
+                        </li>
+                    </ul>
+	            </div><!--/.nav-collapse -->
+            </div>
+        </nav>
+
+        <!-- the modal write shit -->
+        <div  ng-include src="'/Views/write.html'"></div>
+
+        <div class="container main" ng-view>
+    	</div> <!-- /container -->
+
+        <script src="/js/jquery.min.js"></script>
+        <script>window.jQuery || document.write('<script src="js/jquery.min.js"><\/script>')</script>
+        <script src="/js/bootstrap.min.js"></script>
+        <script src="//ajax.googleapis.com/ajax/libs/angularjs/1.5.2/angular.min.js"></script>
+        <script src="//ajax.googleapis.com/ajax/libs/angularjs/1.5.2/angular-resource.min.js"></script>
+        <script src="//ajax.googleapis.com/ajax/libs/angularjs/1.5.2/angular-route.min.js"></script>
+        <script src="//ajax.googleapis.com/ajax/libs/angularjs/1.5.2/angular-cookies.js"></script>
+        <script src="/js/notify.js"></script>
+        <script src="/controllers/ip_main_controller.js"></script>
+        <script src="/controllers/write_controller.js"></script>
+        <script src="/controllers/book_controller.js"></script>
+        <script src="/controllers/author_controller.js"></script>
+        <script src="/js/tools.js"></script>
+
+    </body>
+  
+</html>

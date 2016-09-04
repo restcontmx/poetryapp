@@ -1,0 +1,68 @@
+<div class="account_container" ng-controller="account_controller">
+
+	<div class="container">
+		<h2>Cuenta</h2>
+		<div class="row">
+			<div class="col-md-6 pull-right">
+				<form novalidate class="simple-form">
+					<div class="row">
+						<div class="col-md-12">
+							<label>Correo</label>
+							<input class="form-control" type="text" ng-model="user.email" placeholder="">
+							<br/>
+						</div>
+						<div class="col-md-12">
+							<label>Nickname</label>
+							<input class="form-control" type="text" ng-model="user.username" placeholder="">
+							<br/>
+						</div>
+						<div class="col-md-12">
+							<label>Nombre</label>
+							<input class="form-control" type="text" ng-model="user.name" placeholder="">
+							<br/>
+						</div>
+						<div class="col-md-12">
+							<label>Facebook</label>
+							<input class="form-control" type="text" ng-model="user.facebook_account" placeholder="http://facebook.com/account">
+							<br/>
+						</div>
+						<div class="col-md-12">
+							<label>Twitter</label>
+							<input class="form-control" type="text" ng-model="user.twitter_account" placeholder="http://twitter.com/account">
+							<br/>
+						</div>
+						<div class="col-md-6">
+							<input class="btn btn-md btn-danger" type="submit" ng-click="delete(user)" value="Borrar cuenta">
+						</div>
+						<div class="col-md-6 text-right">
+							<input class="btn btn-md" type="submit" ng-click="update(user)" value="Actualizar">
+							<br/>
+						</div>
+					</div>
+				</form>
+			</div>
+			<div class="col-md-6">
+				<div class="row">
+			        <div class="profile-header-container">   
+			    		<div class="profile-header-img">
+			                <img class="img-circle" src="{{user.user_image}}" />
+			                <!-- badge -->
+			                <div class="rank-label-container">
+			                    <span class="label label-default rank-label">189 posts</span>
+			                    <span class="label label-default rank-label">30 libros</span>
+			                </div>
+			            </div>
+			        </div> 
+				</div>
+				<div class="row text-center">
+					<div class="col-md-12">{{user.name}}</div>
+					<div class="col-md-12">Miembro desde 4 de julio 2015</div>
+					<div class="col-md-12">189 posts</div>
+					<div class="col-md-12">30 libros</div>
+					<div class="col-md-12">800 compartidos</div>
+				</div>
+			</div>
+		</div>
+	</div>
+
+</div>

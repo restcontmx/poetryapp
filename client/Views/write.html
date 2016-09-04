@@ -1,0 +1,65 @@
+
+<!-- The Modal -->
+<div id="write_modal" class="modal" >
+
+	<!-- Modal content -->
+	<div class="modal-content">
+		<a href="" ng-click="close_write_modal()">
+			<span class="close">×</span>
+		</a>
+		<div clas="write-form-box" ng-controller="write_controller">
+			<form novalidate class="simple-form">
+				<div class="row">
+					<div class="col-md-8">
+						<div class="row">
+							<div class="col-md-12">
+				      			<input type="text" ng-model="write.title" class="form-control" placeholder="Título">
+								<br/>
+							</div>
+
+							<div class="col-md-12">
+				      			<textarea rows="5" ng-model="write.content" class="form-control" placeholder="Texto"></textarea>
+				      			<br/>
+							</div>
+
+							<div class="col-md-6">
+				      			<select style="font-family: '{{write.font}}', serif;" class="form-control" id="fontWrite" ng-model="write.font" >
+								    <option id="0">Amiri</option>
+								    <option id="1">Trirong</option>
+								    <option id="2">Raleway</option>
+								    <option id="3">Roboto Mono</option>
+								    <option id="4">Share Tech Mono</option>
+								    <option id="5">Cormorant Infant</option>
+								 </select>
+							</div>
+
+							<div class="col-md-6">
+								<div class="input-group">
+			  						<span class="input-group-addon" id="quotation_addon"><i class="fa fa-quote-left" aria-hidden="true"></i></span>
+									<input type="text" ng-model="write.quotation" class="form-control" name="authorWrite" id="quotationWrite" placeholder="Cita" aria-describedby="quotation_addon">
+								</div>
+								<br/>
+							</div>
+
+							<div class="col-md-2 pull-right text-right">
+								<input type="submit" ng-click="add(write)" class="btn btn-info" name="submit" value="Publicar">
+							</div>
+							<div class="col-md-3 pull-left text-left">
+								<input type="submit" ng-click="addAnonymous(write)" class="btn btn-warning" name="submit" value="Publicar anónimo">
+							</div>
+						</div>
+					</div>
+					<div class="col-md-4">
+						<div class="text-center" style="font-family: '{{write.font}}', serif;">
+							<h3>{{write.title}}</h3>
+							<p>{{write.content}}</p>
+							<small class="text-left">{{write.quotation}}</small>
+						</div>
+					</div>
+				</div>
+			</form>
+		
+		</div>
+	</div>
+
+</div>
